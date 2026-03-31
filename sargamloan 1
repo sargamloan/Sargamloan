@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SargamLoan - Instant Payday Loans</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body {background:#f5f7fb;color:#333;}
+    header {background:#4f46e5;color:#fff;padding:15px 30px;display:flex;justify-content:space-between;align-items:center;}
+    header h1 {font-size:22px;}
+    nav a {color:#fff;margin-left:20px;text-decoration:none;}
+    .hero {padding:60px 30px;text-align:center;background:linear-gradient(135deg,#6366f1,#4f46e5);color:#fff;}
+    .hero h2 {font-size:32px;margin-bottom:10px;}
+    .hero p {margin-bottom:20px;}
+    .btn {background:#fff;color:#4f46e5;padding:10px 20px;border:none;border-radius:8px;cursor:pointer;font-weight:600;}
+    .container {padding:40px 20px;max-width:1000px;margin:auto;}
+    .card {background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.1);margin-bottom:20px;}
+    .calculator input {width:100%;padding:10px;margin:10px 0;border:1px solid #ccc;border-radius:6px;}
+    footer {text-align:center;padding:20px;background:#111;color:#fff;margin-top:30px;}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SargamLoan</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#calculator">Calculator</a>
+    <a href="#apply">Apply</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Instant Payday Loans</h2>
+  <p>Quick approval • No paperwork • Money in minutes</p>
+  <button class="btn">Apply Now</button>
+</section>
+
+<div class="container">
+
+  <div class="card">
+    <h3>Why Choose Us?</h3>
+    <ul>
+      <li>✔ Instant Approval</li>
+      <li>✔ Minimal Documentation</li>
+      <li>✔ Secure & Trusted</li>
+    </ul>
+  </div>
+
+  <div class="card calculator" id="calculator">
+    <h3>Loan Eligibility Calculator</h3>
+    <input type="number" id="income" placeholder="Monthly Income">
+    <input type="number" id="loan" placeholder="Required Loan Amount">
+    <button class="btn" onclick="calculate()">Check Eligibility</button>
+    <p id="result"></p>
+  </div>
+
+  <div class="card" id="apply">
+    <h3>Apply Now</h3>
+    <input type="text" placeholder="Full Name">
+    <input type="tel" placeholder="Phone Number">
+    <input type="number" placeholder="Loan Amount">
+    <button class="btn">Submit</button>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 SargamLoan. All rights reserved.</p>
+</footer>
+
+<script>
+function calculate() {
+  let income = document.getElementById('income').value;
+  let loan = document.getElementById('loan').value;
+  let result = document.getElementById('result');
+
+  if(income > loan/2) {
+    result.innerHTML = "✅ You are eligible for this loan";
+    result.style.color = "green";
+  } else {
+    result.innerHTML = "❌ You are not eligible";
+    result.style.color = "red";
+  }
+}
+</script>
+
+</body>
+</html>
